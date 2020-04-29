@@ -26,7 +26,7 @@ def get_DE_COVID_Case (NYTUrl):
 #print('The total COVID-19 cases in Delaware, USA are ' + DEcasecount)
 #api.update_status('The total COVID-19 cases, according to @nytimes, in Delaware, USA are ' + DEcasecount + '.')
 
-for tweet in tweepy.Cursor(api.search, q="(Delaware AND COVID) OR (Delaware AND Coronavirus) OR (deCOVID) OR (coronavirusdelaware) OR (Delaware AND FlattenTheCurve) OR (socialdistancing AND Delaware) OR (netDE AND COVID) OR (netDE AND Coronavirus) OR (inWilm and COVID) OR (inWilm and Coronavirus) OR (#WilmDE and COVID) OR (#WilmDE and Coronavirus) -(Ohio OR Valley)", lang="en", ).items(numberTweets):
+for tweet in tweepy.Cursor(api.search, q="(Delaware AND COVID) OR (Delaware AND Coronavirus) OR (deCOVID) OR (coronavirusdelaware) OR (Delaware AND FlattenTheCurve) OR (socialdistancing AND Delaware) OR (netDE AND COVID) OR (netDE AND Coronavirus) OR (inWilm and COVID) OR (inWilm and Coronavirus) OR (#WilmDE and COVID) OR (#WilmDE and Coronavirus) -(Ohio OR 'Delaware Valley' OR 'Delaware County' OR 'Delaware River')", lang="en", ).items(numberTweets):
     try:
         print('Tweet Retweeted')
         tweet.retweet()
@@ -35,7 +35,3 @@ for tweet in tweepy.Cursor(api.search, q="(Delaware AND COVID) OR (Delaware AND 
         print(e.reason)
     except StopIteration:
         break
-
-
-
-
