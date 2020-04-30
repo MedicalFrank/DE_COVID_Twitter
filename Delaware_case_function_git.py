@@ -5,11 +5,8 @@ import requests
 auth = tweepy.OAuthHandler('','') #API key is first, then API key secert is second
 auth.set_access_token('','') #Acess token, Access token secret is the order
 
-
 api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True) #wait_on_rate_limit will take a break when you are making too many api requests
 user = api.me()
-
-
 
 def get_DE_COVID_Case (NYTUrl):
     res = requests.get(NYTUrl)
